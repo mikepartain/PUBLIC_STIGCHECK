@@ -3,6 +3,7 @@ All in one file
 DoD DISA STIG Check for Cisco IOS, IOS-XE, NXOS, and Brocade Devices
 by Mike Partain with dependency on CiscoConfParse by Mike Pennington.
 
+## StigCheck.py
 To run the StigChecker you will need to have your configs stored in a directory that is accessible
 by this script.
 
@@ -14,7 +15,7 @@ by this script.
 
 
 There is a stig options file in the includes/ directory that has some basic options you can modify.  Do this with Caution.
-
+## stigger.pyc
 Each device in the configs directory is classified as a type, L3_SWITCH, L2_SWITCH, ROUTER, etc.  Each device
 is additionally identified by Vendor.  This can be used to test one single device like:
 
