@@ -7,10 +7,10 @@ To run the StigChecker you will need to have your configs stored in a directory 
 by this script.
 
 1. Oprion 1, run all stig checks against the configs in the directory of your choice
-..* python SC-Simple.pyc
+  * python SC-Simple.pyc
 
 2. Option 2, same as option 1 but it will generate the STIG Checklists for each device in the checklists/ folder
-..* python SC-Simple.pyc -all
+  python SC-Simple.pyc -all
 
 
 There is a stig options file in the includes/ directory that has some basic options you can modify.  Do this with Caution.
