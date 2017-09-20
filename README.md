@@ -6,7 +6,7 @@ by Mike Partain with dependency on CiscoConfParse by Mike Pennington.
 1.  Results are compiled and presented in a rollup spreadsheet in the results folder.  There will be an XLSX file
     generated that will provide a listing of findings by device type, open findings, not reviewed findings, percentage of
     completion of the review, etc.  Additionally there are two tabs in the worksheet that presents a breakdown by 
-    device type and also a complete Rollup of all findings.  The Rollup tab and be filtered to reflec all Failed(open)
+    device type and also a complete Rollup of all findings.  The Rollup tab can be filtered to reflect all Failed(open)
     and not reviewed NETIDs.  This can be helpful for remediating those devices with open finding.
 
 ### StigCheck.py
