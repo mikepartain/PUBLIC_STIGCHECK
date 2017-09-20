@@ -45,7 +45,12 @@ bash# cat requirements.txt | while read line; do pip install $line; done
 
 That should install all modules.  If you are not using virtualenv then run the installs as root.
 
-# Device Types
+## VENDOR
+  * Cisco
+  * Brocade
+  * Juniper (Coming soon... Hopefully)
+  
+## Device Types
   * L3_SWITCH
   * L2_SWITCH
   * ROUTER
