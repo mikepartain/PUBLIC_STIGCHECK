@@ -2,6 +2,20 @@
 DoD DISA STIG Check for Cisco IOS, IOS-XE, NXOS, IOS-XR and Brocade Devices
 by Mike Partain with dependency on CiscoConfParse by Mike Pennington.
 
+## Python Module Requirements
+    ciscoconfparse==1.2.47
+    lxml==3.7.3
+    netmiko==1.3.0
+    openpyxl==2.4.8
+    tqdm==4.15.0
+    
+You should be able to install the dependencies with 'pip install -r requirements.txt' but some have trouble with
+the cryptography.  If you have cryptography already satisfied try this from a bash shell:
+
+`cat requirements.txt | while read line; do pip install $line; done`
+
+That should install all modules.  If you are not using virtualenv then run the installs as root.
+
 ### Results
 1.  Results are compiled and presented in a rollup spreadsheet in the results folder.  There will be an XLSX file
     generated that will provide a listing of findings by device type, open findings, not reviewed findings, percentage of
@@ -38,21 +52,6 @@ No report is generated.
 ***There is a stig options file in the includes/ directory that has some basic options you can modify.  Do this with Caution.
 
 
-## Python Module Requirements
-    ciscoconfparse==1.2.47
-    lxml==3.7.3
-    netmiko==1.3.0
-    openpyxl==2.4.8
-    tqdm==4.15.0
-    
-
-
-You should be able to install the dependencies with 'pip install -r requirements.txt' but some have trouble with
-the cryptography.  If you have cryptography already satisfied try this from a bash shell:
-
-bash# cat requirements.txt | while read line; do pip install $line; done
-
-That should install all modules.  If you are not using virtualenv then run the installs as root.
 
 ### VENDOR
   * Cisco
