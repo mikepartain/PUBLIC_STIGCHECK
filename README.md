@@ -6,11 +6,11 @@ by Mike Partain with dependency on CiscoConfParse by Mike Pennington.
 To run the StigChecker you will need to have your configs stored in a directory that is accessible
 by this script.
 
-Oprion 1, run all stig checks against the configs in the directory of your choice
-..*python SC-Simple.pyc
+1. Oprion 1, run all stig checks against the configs in the directory of your choice
+..* python SC-Simple.pyc
 
-Option 2, same as option 1 but it will generate the STIG Checklists for each device in the checklists/ folder
-..*python SC-Simple.pyc -all
+2. Option 2, same as option 1 but it will generate the STIG Checklists for each device in the checklists/ folder
+..* python SC-Simple.pyc -all
 
 
 There is a stig options file in the includes/ directory that has some basic options you can modify.  Do this with Caution.
@@ -18,10 +18,10 @@ There is a stig options file in the includes/ directory that has some basic opti
 Each device in the configs directory is classified as a type, L3_SWITCH, L2_SWITCH, ROUTER, etc.  Each device
 is additionally identified by Vendor.  This can be used to test one single device like:
 
-Option 1, this will run all STIG checks for the device and save the results in results/<todays day>
+1. Option 1, this will run all STIG checks for the device and save the results in results/<todays day>
 ..*python stigger.pyc configs/r1 CISCO ROUTER
 
-Option 2, this will run a single STIG check for that device and display the results to the screen.
+2. Option 2, this will run a single STIG check for that device and display the results to the screen.
 No report is generated.
 ..*python stigger.pyc configs/r3 CISCO ROUTER NET0800
 
