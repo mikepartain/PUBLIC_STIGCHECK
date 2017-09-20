@@ -2,7 +2,7 @@
 DoD DISA STIG Check for Cisco IOS, IOS-XE, NXOS, IOS-XR and Brocade Devices
 by Mike Partain with dependency on CiscoConfParse by Mike Pennington.
 
-## StigCheck.py
+### StigCheck.py
 To run the StigChecker you will need to have your configs stored in a directory that is accessible
 by this script.
 
@@ -14,7 +14,7 @@ by this script.
   * python StigCheck.pyc -all
 
 
-## stigger.pyc
+### stigger.pyc
 Each device in the configs directory is classified as a type, L3_SWITCH, L2_SWITCH, ROUTER, etc.  Each device
 is additionally identified by Vendor.  This can be used to test one single device like:
 
@@ -29,7 +29,7 @@ No report is generated.
 ***There is a stig options file in the includes/ directory that has some basic options you can modify.  Do this with Caution.
 
 
-# Python Module Requirements
+## Python Module Requirements
     ciscoconfparse==1.2.47
     lxml==3.7.3
     netmiko==1.3.0
@@ -45,12 +45,12 @@ bash# cat requirements.txt | while read line; do pip install $line; done
 
 That should install all modules.  If you are not using virtualenv then run the installs as root.
 
-## VENDOR
+### VENDOR
   * Cisco
   * Brocade
   * Juniper (Coming soon... Hopefully)
   
-## Device Types
+### Device Types
   * L3_SWITCH
   * L2_SWITCH
   * ROUTER
