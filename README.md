@@ -46,10 +46,10 @@ bash# cat requirements.txt | while read line; do pip install $line; done
 That should install all modules.  If you are not using virtualenv then run the installs as root.
 
 # Device Types
-   L3_SWITCH
-   L2_SWITCH
-   ROUTER
-   IOS_XR
-   NXOS_L2_SWITCH
-   IPSEC
-   PERIMETER
+  * L3_SWITCH
+  * L2_SWITCH
+  * ROUTER
+  * IOS_XR
+  * NXOS_L2_SWITCH
+  * IPSEC
+  * PERIMETER
