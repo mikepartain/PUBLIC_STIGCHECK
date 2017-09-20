@@ -29,37 +29,12 @@ No report is generated.
 
 
 # Python Module Requirements
-Additionally install the below for Cryptopgraphy to build
-sudo apt-get install build-essential autoconf libtool pkg-config python-opengl python-imaging python-pyrex python-pyside.qtopengl idle-python2.7 qt4-dev-tools qt4-designer libqtgui4 libqtcore4 libqt4-xml libqt4-test libqt4-script libqt4-network libqt4-dbus python-qt4 python-qt4-gl libgle3 python-dev libssl-dev
-
-    appdirs==1.4.3
-    asn1crypto==0.22.0
-    bcrypt==3.1.3
-    cffi==1.10.0
-    cisco-decrypt==0.8.3
     ciscoconfparse==1.2.47
-    colorama==0.3.7
-    cryptography==1.8.1
-    dnspython==1.15.0
-    enum34==1.1.6
-    et-xmlfile==1.0.1
-    idna==2.5
-    ipaddr==2.1.11
-    ipaddress==1.0.18
-    jdcal==1.3
     lxml==3.7.3
     netmiko==1.3.0
     openpyxl==2.4.8
-    packaging==16.8
-    paramiko==2.1.2
-    pyasn1==0.2.3
-    pycparser==2.17
-    PyNaCl==1.1.2
-    pyparsing==2.2.0
-    PyYAML==3.12
-    scp==0.10.2
-    six==1.10.0
     tqdm==4.15.0
+    
 
 
 You should be able to install the dependencies with 'pip install -r requirements.txt' but some have trouble with
