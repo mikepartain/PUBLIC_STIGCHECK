@@ -2,6 +2,8 @@
 DoD DISA STIG Check for Cisco IOS, IOS-XE, NXOS, IOS-XR and Brocade Devices
 by Mike Partain with dependency on CiscoConfParse by Mike Pennington.
 
+### This was developed on RHEL 7 / CentOS 7 with Python 2.7.5
+
 ## Python Module Requirements
     ciscoconfparse==1.2.47
     lxml==3.7.3
@@ -10,7 +12,7 @@ by Mike Partain with dependency on CiscoConfParse by Mike Pennington.
     tqdm==4.15.0
     
 You should be able to install the dependencies with 'pip install -r requirements.txt' but some have trouble with
-the cryptography.  If you have cryptography already satisfied try this from a bash shell:
+this.  I am looking for a fix. if the above does not work try the below in a bash shell:
 
 `cat requirements.txt | while read line; do pip install $line; done`
 
