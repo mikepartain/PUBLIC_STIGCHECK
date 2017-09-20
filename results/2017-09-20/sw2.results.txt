@@ -1,0 +1,62 @@
+sw2                                     NET-NAC-012         NA                  CAT II              STIG Check does not apply, Campus BackBone Devices do not have 802.1x implemented.
+sw2                                     NET-NAC-031         PASS                CAT II              Interfaces are configured to shutdown on port-security violation.
+sw2                                     NET-NAC-032         PASS                CAT III             Port Security Violation is correctly configured.
+sw2                                     NET-VLAN-002        PASS                CAT III             All disabled ports are in a disabled VLAN
+sw2                                     NET-VLAN-004        NR                  medium              This STIG needs to be written.
+sw2                                     NET-VLAN-005        PASS                CAT III             VLAN 1 is disabled on trunk interfaces.
+sw2                                     NET-VLAN-006        NR                  medium              This STIG needs to be written.
+sw2                                     NET-VLAN-007        PASS                CAT II              Trunking is disabled on all access ports.
+sw2                                     NET-VLAN-008        CHECK               CAT II              Ethernet0/0 Is using the default vlan for the trunk.
+sw2                                     NET-VLAN-008        CHECK               CAT II              Ethernet2/2 Is using the default vlan for the trunk.
+sw2                                     NET-VLAN-008        CHECK               CAT II              Ethernet2/3 Is using the default vlan for the trunk.
+sw2                                     NET-VLAN-008        FAIL                CAT II              Is using the default vlan for the trunk.
+sw2                                     NET-VLAN-009        PASS                CAT II              Access switchports are not assigned to the native VLAN.
+sw2                                     NET-VLAN-023        NA                  CAT III             No interface VLANs are configured
+sw2                                     NET0230             FAIL                CAT I               Device does not require a password.
+sw2                                     NET0240             PASS                CAT I               Default Manufacturer account is not configured.
+sw2                                     NET0340             FAIL                CAT II              Login banner is non-existent or not DOD-approved..
+sw2                                     NET0405             PASS                CAT II              Call home service is disabled.
+sw2                                     NET0433             FAIL                CAT II              Device is using less than two servers for authetication.
+sw2                                     NET0440             FAIL                CAT II              No local account is configured.
+sw2                                     NET0441             PASS                CAT I               Emergency account privilege level is set.
+sw2                                     NET0460             NA                  CAT I               Groups accounts cannot be configured locally.
+sw2                                     NET0465             PASS                CAT II              Emergency account priviledge is set to 0.
+sw2                                     NET0470             FAIL                CAT II              Only one local account should be configured.
+sw2                                     NET0600             FAIL                CAT I               Passwords are NOT encrypted in the config.
+sw2                                     NET0700             NR                  CAT II              This is a manual check.
+sw2                                     NET0720             PASS                CAT III             TCP and UDP Small servers are disabled
+sw2                                     NET0722             FAIL                CAT III             PAD Service is NOT disabled.
+sw2                                     NET0724             FAIL                CAT III             TCP Keepalives are NOT enabled.
+sw2                                     NET0730             PASS                CAT III             IP Finger is not enabled.
+sw2                                     NET0740             PASS                CAT II              HTTP Server is not enabled.
+sw2                                     NET0744             PASS                CAT II              RCMD is not enabled.
+sw2                                     NET0812             FAIL                CAT III             Two NTP Servers are not configured.
+sw2                                     NET0813             PASS                CAT II              NTP messages are authenticated.
+sw2                                     NET0820             PASS                CAT III             DNS is configured properly.
+sw2                                     NET0990             NA                  CAT II              No OOBM solution implemented.
+sw2                                     NET0894             PASS                CAT II              NOAUTH is NOT used in SNMP configuration.
+sw2                                     NET0965             FAIL                CAT II              Device not configured to filter and drop half-open connections.
+sw2                                     NET0990             NR                  medium              This STIG needs to be written.
+sw2                                     NET0991             NA                  CAT II              No OOBM solution implemented.
+sw2                                     NET0994             NA                  CAT II              No OOBM solution implemented.
+sw2                                     NET0995             NA                  CAT III             No OOBM solution implemented.
+sw2                                     NET0996             NA                  CAT II              No OOBM solution implemented.
+sw2                                     NET0997             NA                  CAT III             No OOBM solution implemented.
+sw2                                     NET1003             FAIL                CAT II              Device is missing management interface IP.
+sw2                                     NET1021             PASS                CAT III             Logging server is configured with the proper level.
+sw2                                     NET1030             PASS                CAT III             Login and perform a write mem.
+sw2                                     NET1623             FAIL                CAT I               Console Authentication is not set.
+sw2                                     NET1624             PASS                CAT II              The console port does timeout after 10 minutes.
+sw2                                     NET1629             FAIL                CAT III             AUX port is enabled 
+sw2                                     NET1636             PASS                CAT I               Login authentication is set by AAA.
+sw2                                     NET1637             FAIL                CAT II              Management connections are not restricted.
+sw2                                     NET1638             CHECK               CAT II              Check SSH Version.  
+sw2                                     NET1638             FAIL                CAT II              SSH is not version 2
+sw2                                     NET1639             PASS                CAT II              Management connection does timeout.
+sw2                                     NET1640             FAIL                CAT III             Null Is not logging all permits.
+sw2                                     NET1645             PASS                CAT II              SSH Timeout is 60 seconds or less.
+sw2                                     NET1646             NR                  medium              This STIG needs to be written.
+sw2                                     NET1647             NR                  medium              This STIG needs to be written.
+sw2                                     NET1660             PASS                CAT I               An insecure version of SNMP is NOT being used.
+sw2                                     NET1665             NR                  high                This STIG needs to be written.
+sw2                                     NET1675             CHECK               CAT II              Standard SNMPv3 groups are not configured.

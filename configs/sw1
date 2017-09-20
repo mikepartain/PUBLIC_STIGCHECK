@@ -1,0 +1,129 @@
+!
+! Last configuration change at 01:33:28 PST Fri Jun 13 2014
+!
+version 15.1
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+service compress-config
+!
+hostname SW1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no logging console
+!
+no aaa new-model
+clock timezone PST -8 0
+!
+ip cef
+!
+!
+no ip domain-lookup
+vtp mode transparent
+no ipv6 cef
+ipv6 multicast rpf use-bgp
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+!
+!
+!
+!
+!
+vlan internal allocation policy ascending
+!
+vlan 12,16,34,36 
+!
+ip tcp synwait-time 5
+!
+!
+!
+!
+interface Ethernet0/0
+ duplex auto
+!
+interface Ethernet0/1
+ switchport access vlan 12
+ switchport mode access
+ duplex auto
+!
+interface Ethernet0/2
+ switchport access vlan 34
+ switchport mode access
+ duplex auto
+!
+interface Ethernet0/3
+ duplex auto
+!
+interface Ethernet1/0
+ switchport access vlan 34
+ switchport mode access
+ duplex auto
+!
+interface Ethernet1/1
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 16,36
+ switchport mode trunk
+ duplex auto
+!
+interface Ethernet1/2
+ shutdown
+ duplex auto
+!
+interface Ethernet1/3
+ shutdown
+ duplex auto
+!
+interface Ethernet2/0
+ switchport access vlan 36
+ switchport mode access
+ duplex auto
+!
+interface Ethernet2/1
+ shutdown
+ duplex auto
+!
+interface Ethernet2/2
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 12,16,34
+ switchport mode access
+ duplex auto
+!
+interface Ethernet2/3
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 12,16,34
+ switchport mode access
+ duplex auto
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+!
+!
+no ip http server
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ location cierswbv5-te-lab02-sc, SJ
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+line vty 0 4
+ location cierswbv5-te-lab02-sc, SJ
+ exec-timeout 0 0
+ privilege level 15
+ no login
+ transport input all
+!
+end
+

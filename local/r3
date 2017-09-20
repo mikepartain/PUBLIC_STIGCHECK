@@ -1,0 +1,188 @@
+!
+! Last configuration change at 01:26:49 PST Fri Jun 13 2014
+version 15.3
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R3
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no logging console
+!
+no aaa new-model
+clock timezone PST -8 0
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+
+
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+ipv6 unicast-routing
+ipv6 cef
+ipv6 multicast rpf use-bgp
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+redundancy
+!
+!
+ip tcp synwait-time 5
+csdb tcp synwait-time 30
+csdb tcp idle-time 3600
+csdb tcp finwait-time 5
+csdb tcp reassembly max-memory 1024
+csdb tcp reassembly max-queue-length 16
+csdb udp idle-time 30
+csdb icmp idle-time 10
+csdb session max-session 65535
+! 
+!
+!
+!
+crypto isakmp diagnose error
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback103
+ ip address 172.16.103.1 255.255.255.0
+ ip ospf network point-to-point
+ ipv6 address 2001:103::1/64
+ ipv6 ospf 1 area 103
+ ipv6 ospf network point-to-point
+!
+interface Tunnel134
+ ip address 172.16.134.3 255.255.255.0
+ no ip redirects
+ ip nhrp map 172.16.134.1 192.168.1.1
+ ip nhrp network-id 134
+ ip nhrp nhs 192.168.1.1
+ ip ospf network non-broadcast
+ ip ospf priority 0
+ tunnel source Ethernet0/2
+ tunnel mode gre multipoint
+ tunnel key 134
+!
+interface Ethernet0/0
+ ip address 172.16.34.3 255.255.255.0
+ ipv6 address 2001:34::3/64
+ ipv6 eigrp 1
+!
+interface Ethernet0/1
+ no ip address
+ shutdown
+!
+interface Ethernet0/2
+ ip address 192.168.1.3 255.255.255.0
+ ipv6 address FE80::3 link-local
+ ipv6 address 2001:134::3/64
+ ipv6 ospf 1 area 0
+ ipv6 ospf network non-broadcast
+ ipv6 ospf priority 0
+!
+interface Ethernet0/3
+ no ip address
+ shutdown
+!
+interface Serial1/0
+ no ip address
+ shutdown
+ serial restart-delay 0
+!
+interface Serial1/1
+ no ip address
+ shutdown
+ serial restart-delay 0
+!
+interface Serial1/2
+ no ip address
+ shutdown
+ serial restart-delay 0
+!
+interface Serial1/3
+ no ip address
+ shutdown
+ serial restart-delay 0
+!
+router ospf 1
+ redistribute rip subnets
+ network 172.16.103.1 0.0.0.0 area 103
+ network 172.16.134.3 0.0.0.0 area 0
+!
+router rip
+ version 2
+ redistribute ospf 1 metric 2
+ passive-interface default
+ no passive-interface E0/0
+ network 172.16.0.0
+ neighbor 172.16.34.5
+ distance 109 0.0.0.0 0.0.0.0 10
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+ipv6 router eigrp 1
+ redistribute ospf 1 metric 1500 100 255 3 1500 include-connected
+!
+ipv6 router ospf 1
+ distance ospf external 171 
+ redistribute eigrp 1 include-connected
+!
+!
+!
+access-list 10 permit 172.16.104.0
+access-list 10 permit 172.16.105.0
+access-list 10 permit 172.16.103.0
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ location cierswbv5-te-lab02-sc, SJ
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+line vty 0 4
+ location cierswbv5-te-lab02-sc, SJ
+ exec-timeout 0 0
+ privilege level 15
+ no login
+ transport input all
+!
+!
+end

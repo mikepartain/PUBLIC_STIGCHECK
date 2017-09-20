@@ -1,0 +1,197 @@
+!
+! Last configuration change at 01:27:27 PST Fri Jun 13 2014
+version 15.3
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no logging console
+!
+no aaa new-model
+clock timezone PST -8 0
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+
+
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+ipv6 unicast-routing
+ipv6 cef
+ipv6 multicast rpf use-bgp
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+redundancy
+!
+!
+ip tcp synwait-time 5
+!
+class-map match-all af11
+ match dscp af11 
+class-map match-all icmp-prec0
+ match ip precedence 0 
+ match protocol icmp
+class-map match-all icmp
+ match protocol icmp
+!
+policy-map ccie
+class icmp-prec0
+set ip precedence 2
+class icmp
+drop
+class af11
+police cir 8000 bc 2000
+conform-action transmit
+exceed-action drop
+!
+csdb tcp synwait-time 30
+csdb tcp idle-time 3600
+csdb tcp finwait-time 5
+csdb tcp reassembly max-memory 1024
+csdb tcp reassembly max-queue-length 16
+csdb udp idle-time 30
+csdb icmp idle-time 10
+csdb session max-session 65535
+! 
+!
+!
+!
+crypto isakmp diagnose error
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback101
+ ip address 172.16.101.1 255.255.255.0
+ ipv6 address 2001:101::1/64
+ ipv6 ospf 1 area 0
+ ipv6 ospf network point-to-point
+!
+interface Tunnel134
+ ip address 172.16.134.1 255.255.255.0
+ no ip redirects
+ ip nhrp network-id 134
+ ip ospf network non-broadcast
+ tunnel source Ethernet0/2
+ tunnel mode gre multipoint
+ tunnel key 134
+!
+interface Ethernet0/0
+ no ip address
+ shutdown
+!
+interface Ethernet0/1
+ no ip address
+!
+interface Ethernet0/1.2
+ encapsulation dot1Q 12
+ ip address 172.16.12.1 255.255.255.0
+!
+interface Ethernet0/1.6
+ encapsulation dot1Q 16
+ ip address 172.16.16.1 255.255.255.0
+ ip virtual-reassembly in
+ ip ospf network point-to-multipoint
+ service-policy input ccie
+!
+interface Ethernet0/2
+ ip address 192.168.1.1 255.255.255.0
+ ipv6 address FE80::1 link-local
+ ipv6 address 2001:134::1/64
+ ipv6 ospf 1 area 0
+ ipv6 ospf network non-broadcast
+!
+interface Ethernet0/3
+ no ip address
+ shutdown
+!
+!
+router eigrp 12
+ network 172.16.12.0 0.0.0.255
+ redistribute connected route-map CONNECTED
+ redistribute ospf 1 metric 1000 1000 255 1 1500
+ auto-summary
+ neighbor 172.16.12.2 Ethernet0/1.2
+!
+router ospf 1
+ area 16 virtual-link 172.16.106.1
+ redistribute connected subnets route-map CONNECTED
+ redistribute eigrp 12 subnets
+ network 172.16.16.1 0.0.0.0 area 16
+ network 172.16.134.1 0.0.0.0 area 0
+!
+router bgp 65001
+ bgp log-neighbor-changes
+ bgp confederation identifier 100
+ bgp confederation peers 65002 
+ network 172.16.101.0 mask 255.255.255.0
+ network 172.16.106.0 mask 255.255.255.0 backdoor
+ neighbor 172.16.16.6 remote-as 600
+ neighbor 172.16.134.4 remote-as 65002
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+ip sla auto discovery
+ipv6 router ospf 1
+!
+!
+route-map CONNECTED deny 10
+ match interface Loopback101
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ location cierswbv5-te-lab02-sc, SJ
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+line vty 0 4
+ location cierswbv5-te-lab02-sc, SJ
+ exec-timeout 0 0
+ privilege level 15
+ no login
+ transport input all
+!
+!
+end
