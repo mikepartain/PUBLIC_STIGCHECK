@@ -2,7 +2,7 @@
 DoD DISA STIG Check for Cisco IOS, IOS-XE, NXOS, IOS-XR and Brocade Devices
 by Mike Partain with dependency on CiscoConfParse by Mike Pennington.
 
-### This was developed on RHEL 7 / CentOS 7 with Python 2.7.5
+##### This was developed on RHEL 7 / CentOS 7 with Python 2.7.5
 
 ## Python Module Requirements
     ciscoconfparse==1.2.47
