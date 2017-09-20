@@ -10,7 +10,7 @@ by this script.
   * python SC-Simple.pyc
 
 2. Option 2, same as option 1 but it will generate the STIG Checklists for each device in the checklists/ folder
-  python SC-Simple.pyc -all
+  * python SC-Simple.pyc -all
 
 
 There is a stig options file in the includes/ directory that has some basic options you can modify.  Do this with Caution.
@@ -19,11 +19,11 @@ Each device in the configs directory is classified as a type, L3_SWITCH, L2_SWIT
 is additionally identified by Vendor.  This can be used to test one single device like:
 
 1. Option 1, this will run all STIG checks for the device and save the results in results/<todays day>
-..*python stigger.pyc configs/r1 CISCO ROUTER
+  * python stigger.pyc configs/r1 CISCO ROUTER
 
 2. Option 2, this will run a single STIG check for that device and display the results to the screen.
 No report is generated.
-..*python stigger.pyc configs/r3 CISCO ROUTER NET0800
+  * python stigger.pyc configs/r3 CISCO ROUTER NET0800
 
 
 # Python Module Requirements
