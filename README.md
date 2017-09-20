@@ -1,6 +1,5 @@
 # STIGCHECK
-All in one file
-DoD DISA STIG Check for Cisco IOS, IOS-XE, NXOS, and Brocade Devices
+DoD DISA STIG Check for Cisco IOS, IOS-XE, NXOS, IOS-XR and Brocade Devices
 by Mike Partain with dependency on CiscoConfParse by Mike Pennington.
 
 ## StigCheck.py
@@ -45,3 +44,12 @@ the cryptography.  If you have cryptography already satisfied try this from a ba
 bash# cat requirements.txt | while read line; do pip install $line; done
 
 That should install all modules.  If you are not using virtualenv then run the installs as root.
+
+# Device Types
+   L3_SWITCH
+   L2_SWITCH
+   ROUTER
+   IOS_XR
+   NXOS_L2_SWITCH
+   IPSEC
+   PERIMETER
