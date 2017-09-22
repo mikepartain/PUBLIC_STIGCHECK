@@ -1,4 +1,4 @@
 c9006-jbce-a-clage-1000-tr03-1,FOUO_JIE_Router_L3_Switch_V1R1_Manual-xccdf.xml.stig,CISCO,IOS_XR
 c9006-jbce-a-patge-2324-127-0104-1,FOUO_JIE_Router_L3_Switch_V1R1_Manual-xccdf.xml.stig,CISCO,IOS_XR
-c9006-jbce-b-clage-1012-tcf-1,FOUO_JIE_Router_L3_Switch_V1R1_Manual-xccdf.xml.stig,CISCO,IOS_XR
+c9006-jbce-b-clage-1012-tcf-1,U_Network_Perimeter_Router_Cisco_STIG_V8R26_Manual-xccdf.xml.stig,CISCO,PERIMETER
 c9006-jbce-b-patge-2383-1-0004-1,FOUO_JIE_Router_L3_Switch_V1R1_Manual-xccdf.xml.stig,CISCO,IOS_XR
