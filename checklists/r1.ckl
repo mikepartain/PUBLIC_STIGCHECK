@@ -7299,9 +7299,10 @@ If a unique password is not configured for each eBGP peer, this is a finding.</A
                     <VULN_ATTRIBUTE>TargetKey</VULN_ATTRIBUTE>
                     <ATTRIBUTE_DATA>510</ATTRIBUTE_DATA>
                 </STIG_DATA>
-                <STATUS>Not_Reviewed</STATUS>
+                <STATUS>NotAFinding</STATUS>
                 <FINDING_DETAILS/>
-                <COMMENTS/>
+                <COMMENTS>StigCheck created by Mike Partain. 
+(steven.m.partain.civ@mail.mil)</COMMENTS>
                 <SEVERITY_OVERRIDE/>
                 <SEVERITY_JUSTIFICATION/>
             </VULN>
